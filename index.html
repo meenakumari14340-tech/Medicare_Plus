@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MediCare Plus - Smart Hospital Management</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<section id="login" class="login">
+  <div class="login-art">
+    <div class="brand big"><span class="logo">+</span> MediCare Plus</div>
+    <h1>Care that moves<br>at the speed of life.</h1>
+    <p>Appointments, patients, pharmacy, lab reports and billing in one modern workspace.</p>
+    <ul class="pills"><li>24/7 Emergency</li><li>Smart Scheduling</li><li>Digital Records</li></ul>
+  </div>
+  <form id="loginForm" class="login-card" autocomplete="off">
+    <h2>Welcome back</h2>
+    <p class="muted">Sign in to continue to your dashboard</p>
+    <label>Username<input id="user" placeholder="admin" value="admin"></label>
+    <label>Password<input id="pass" type="password" placeholder="Enter password" value="admin123"></label>
+    <label>Role
+      <select id="role"><option>Administrator</option><option>Doctor</option><option>Receptionist</option></select>
+    </label>
+    <p id="loginErr" class="err"></p>
+    <button class="btn primary wide" type="submit">Sign In</button>
+    <p class="hint">Demo login: admin / admin123</p>
+  </form>
+</section>
+
+<div id="app" class="app hidden">
+  <aside class="sidebar" id="sidebar">
+    <div class="brand"><span class="logo">+</span> MediCare Plus</div>
+    <nav id="nav"></nav>
+    <div class="side-foot">
+      <div class="me"><div class="avatar">AD</div><div><b>Admin User</b><small>Administrator</small></div></div>
+      <button class="btn ghost wide" id="logout">Logout</button>
+    </div>
+  </aside>
+  <div class="main">
+    <header class="topbar">
+      <button class="icon-btn menu" id="menuBtn" aria-label="Menu">&#9776;</button>
+      <h2 id="pageTitle">Dashboard</h2>
+      <div class="top-actions">
+        <input id="globalSearch" class="search" placeholder="Search patients, doctors...">
+        <button class="icon-btn" id="themeBtn" title="Toggle dark mode">&#9790;</button>
+        <button class="icon-btn" id="bellBtn" title="Notifications">&#128276;<i class="dot" id="bellDot"></i></button>
+      </div>
+    </header>
+    <main id="view" class="view"></main>
+  </div>
+</div>
+
+<div id="modal" class="modal hidden"><div class="modal-card" id="modalCard"></div></div>
+<div id="toast" class="toast"></div>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
